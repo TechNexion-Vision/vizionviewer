@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=VizionViewer
+Comment=
+Version=23.04.1
+Type=Application
+Icon=/opt/vizionviewer/icons/icon.png
+Terminal=false
+Exec=/opt/vizionviewer/vizionviewer-polkit
+Path=/opt/vizionviewer
+Categories=Utility
+StartupNotify=true

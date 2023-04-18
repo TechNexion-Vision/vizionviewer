@@ -1,0 +1,12 @@
+Package: vizionsdk
+Version: 23.04.1
+Priority: optional
+Section: lib
+Maintainer: TechNexion <support.vision@technexion.com>
+Homepage: https://www.technexion.com/
+Installed-Size: 828
+Architecture: arm64
+Provides: vizionsdk
+Conflicts: vizionsdk
+Replaces: vizionsdk
+Description: This package contains the VizionSDK

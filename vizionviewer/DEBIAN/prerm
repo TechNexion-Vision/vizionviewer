@@ -1,0 +1,10 @@
+#!/bin/bash
+
+app="vizionviewer"
+SRC_FILE="$TARGET_DIR/$app.sh"
+
+if [ -e /usr/bin/$app ]; then
+    rm /usr/bin/$app
+    echo "Remove $app"
+fi
+

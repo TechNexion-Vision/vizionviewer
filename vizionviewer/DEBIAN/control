@@ -1,0 +1,13 @@
+Package: vizionviewer
+Version: 23.04.1
+Depends: vizionsdk
+Priority: optional
+Section: util
+Maintainer: TechNexion <support.vision@technexion.com>
+Homepage: https://www.technexion.com/
+Installed-Size: 80700
+Architecture: arm64
+Provides: vizionviewer
+Conflicts: vizionviewer
+Replaces: vizionviewer
+Description: This package contains the VizionViewer

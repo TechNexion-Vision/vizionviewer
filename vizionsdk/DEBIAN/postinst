@@ -1,0 +1,73 @@
+#!/bin/bash
+
+TARGET_DIR=/usr/share/vizionsdk/
+RULES_FILE=/etc/udev/rules.d/88-cyusb.rules
+
+create_udev_rules() {
+	echo "# Cypress USB driver for FX2 and FX3 (C) Cypress Semiconductor Corporation / ATR-LABS" > $RULES_FILE
+	echo "# Rules written by V. Radhakrishnan ( rk@atr-labs.com )" >> $RULES_FILE
+	echo "# Cypress USB vendor ID = 0x04b4" >> $RULES_FILE
+
+	echo 'KERNEL=="*", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ACTION=="add", ATTR{idVendor}=="04b4", MODE="666", TAG="cyusb_dev", RUN+="'"/usr/local/bin/cy_renumerate.sh A"'"' >> $RULES_FILE
+	echo 'KERNEL=="*", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ACTION=="remove", TAG=="cyusb_dev", RUN+="'"/usr/local/bin/cy_renumerate.sh R"'"' >> $RULES_FILE
+}
+
+# Install Cypress USB driver part
+
+rm -f $RULES_FILE
+create_udev_rules
+
+cp "$TARGET_DIR/driver/cyusb.conf" /etc/
+
+cp "$TARGET_DIR/driver/cy_renumerate.sh" /usr/local/bin
+chmod 777 /usr/local/bin/cy_renumerate.sh
+
+# Install repository source list part
+eval $(apt-config shell APT_SOURCE_PARTS Dir::Etc::sourceparts/d)
+VIZIONSDK_SOURCE_PART=${APT_SOURCE_PARTS}vizionsdk.list
+eval $(apt-config shell APT_TRUSTED_PARTS Dir::Etc::trustedparts/d)
+TECHNEXION_TRUSTED_PART=${APT_TRUSTED_PARTS}technexion.gpg
+
+# Install repository source list
+if [ ! -f $VIZIONSDK_SOURCE_PART ]; then
+	echo "### THIS FILE IS AUTOMATICALLY CONFIGURED ###
+# You may comment out this entry, but any other modifications may be lost.
+deb [arch=arm64] https://download.technexion.com/apt/vizionsdk stable main
+deb [arch=arm64] https://download.technexion.com/apt/vizionviewer stable main" > $VIZIONSDK_SOURCE_PART
+fi
+
+if [ ! -f $TECHNEXION_TRUSTED_PART ]; then
+	echo "-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQENBGQ3nLYBCADR0G1u56VkW7GeYxLFwOmKMA+i9M6x00nOr2h72xqhc2V+FDbM
+eBOfdZIotOyGU1AZPQFS8pssyDIItL/N8K0FZJ/1+HBk6US17yJhDpb7/rU2Fgrw
+zgk97wOVLp9GsFbokX8+aq5tH00WG/m5ubIWKDra1PkV8+xJLxK9JYKb2lFONcuS
+RqYoj9Kp4SbdcxLlwe8ULmgNA2qoTy9295RTqXF3j3Y4GPpoqTTHjOIDPLdHiHK/
+Bgf0c7iwxjvAzao9I21bs0tc9eF1VYju3T+DnhAZVMYUA83Ig4AqYzB4L9SeAs5o
+ANaYZfZijMHBeCTD5VjNDZbZxYff7UvnemfZABEBAAG0OVRlY2hOZXhpb24gKFJl
+bGVhc2Ugc2lnbmluZykgPGdwZ3NlY3VyaXR5QHRlY2huZXhpb24uY29tPokBTgQT
+AQoAOBYhBAzweIWhCc0u2XK9CdOK1Rc2D6XSBQJkN5y2AhsDBQsJCAcCBhUKCQgL
+AgQWAgMBAh4BAheAAAoJENOK1Rc2D6XS1DgIAMnbRTWWa8elpKFt2G1h3d1MCPEt
+w3jo3GL+uY478m6X19kiJ/mcvvhJarbAtfBCUAJc3+mC0uQO8IR07lvK2buM4/Rz
+FiL62sYKuXq6T+/ZNe44yOVC8bRTHCNoH+bBcGdP+bUp1DfAGTm3fBEuuYs2Clar
+X2cJk67K6J/CDksCOuUN2hlvM/WNir7DCQCXEtrE6CEbAN71+aEiDsr3+wEDkJaA
+wLWtKzo1ok7WGQ352QL3tSsb1EmPKdjG/yaXLvIDLtwHhQXSjzCCtWLGee/cYxhh
+lTesMJmZmQoQcrlHFf0TWkkOGe3tm1VN5HWrh9OKDrtx2+VfWOD0+WJXBPG5AQ0E
+ZDectgEIAKRndktq0JGKLLf64li3IRz7/8WfC6c6MxHW6jPWDdMC2ksak5FP9EqT
+Oskvw1bV4O3I2j4XPDevlA50adz2aE6L1+NYzsoeWBDViWOv1u5543JEiNSLMLr7
+COqPszR/jxOqupPlp5zWyOXhkbSZIKT5YA9dDpxKzKB0HN2b0kBCqWgz9vUcDSfK
+xURdmVkgHqej5MIwV83GpSqZdl/tJ4lDNgrbaz+30gYQLvgLAUryz2bqw9L+l+QT
+WUI+TamTo40+VY9IbuMdtRxjbxkGumJs6VEUkqQ3XxzCJRloR/erxO+ugEN51ckR
+rGAan0/8xa5SEEm9Y3WubFKdgMMoZzEAEQEAAYkBNgQYAQoAIBYhBAzweIWhCc0u
+2XK9CdOK1Rc2D6XSBQJkN5y2AhsMAAoJENOK1Rc2D6XSMyQH/3Se/2S6sympnDas
+vBgUFdkQI4mfPBg49jrsCnztJIgDJSPbKaSNd6lbbmkBtXo+hSWe76IGBzqYWQPQ
+wPzngh875ilLkXcYd7p5IXsIf3PUBWnzDtB7GzTkMsAb/2ABBOU3GAE/yL39zHPV
+pHcUVzrohdDn6iPZdC/Z3U5tKhCeTPiX3FLRVGxXBS7gT7TVD52sRF2YtMmjunpJ
+zC6e+R6a19MuOQVpXCs/UoSeasQ+jsDDgCYespLQkgDBvdB1nyVB9aJDP+HAQLY9
+pOK0q4K6SjeSoZNW+KC+0bLRbAhrkV2gI5y6RytlOlFoLbxO644cTfBZ8deQJK8V
+RUUgsfg=
+=Kb0Z
+-----END PGP PUBLIC KEY BLOCK-----
+" | gpg --dearmor > $TECHNEXION_TRUSTED_PART
+fi
+

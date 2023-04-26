@@ -1,5 +1,5 @@
 Package: vizionviewer
-Version: 23.04.2
+Version: 23.04.3
 Depends: vizionsdk
 Priority: optional
 Section: util

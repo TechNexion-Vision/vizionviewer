@@ -1,11 +1,11 @@
 Package: vizionviewer
-Version: 23.04.3
-Depends: vizionsdk
+Version: 23.05.2
 Priority: optional
 Section: util
 Maintainer: TechNexion <support.vision@technexion.com>
 Homepage: https://www.technexion.com/
 Installed-Size: 80700
+Depends: ca-certificates, libfontconfig1, libusb-1.0-0, tzdata, libxkbcommon0, v4l-utils, libpam-runtime, libgudev-1.0-0, vizionsdk (>= 23.05.0)
 Architecture: arm64
 Provides: vizionviewer
 Conflicts: vizionviewer

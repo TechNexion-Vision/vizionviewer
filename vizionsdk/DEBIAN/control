@@ -1,11 +1,11 @@
 Package: vizionsdk
-Version: 23.06.3
+Version: 23.08.1
 Priority: optional
 Section: lib
 Maintainer: TechNexion <support.vision@technexion.com>
 Homepage: https://www.technexion.com/
 Installed-Size: 828
-Depends: libc6, libusb-1.0-0, libudev1, v4l-utils
+Depends: libc6, libusb-1.0-0, libudev1, v4l-utils, gstreamer1.0 | gstreamer1.0-x, gstreamer1.0-plugins-base
 Architecture: arm64
 Provides: vizionsdk
 Conflicts: vizionsdk

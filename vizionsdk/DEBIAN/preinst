@@ -1,0 +1,9 @@
+#!/bin/bash
+
+vizionsdk=/usr/lib/libVizionSDK.so
+
+# Remove old VizionSDK
+if [ -f $vizionsdk ]; then
+	rm /usr/lib/libVizionSDK.so*
+fi
+

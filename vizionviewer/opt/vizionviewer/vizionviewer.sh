@@ -32,6 +32,12 @@ export CQT_RUN_FILE="$BASE_DIR/vizionviewer.sh"
 
 export QT_QPA_PLATFORM_PLUGIN_PATH="$BASE_DIR"/plugins//platforms:$QT_QPA_PLATFORM_PLUGIN_PATH
 
+uname_result=$(uname -a)
+
+if echo "$uname_result" | grep -q "imx93"; then                   
+        export QMLSCENE_DEVICE=softwarecontext                                  
+fi
+
 cd $BASE_DIR
 
 if [ "$#" -ne 4 ]; then

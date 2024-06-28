@@ -1,0 +1,10 @@
+NOTICE
+ 
+This application uses the qtmultimedia library, which is licensed under the Lesser General Public License (LGPL).
+ 
+Modifications:
+- Disable gst devicemonitor [commit: 8c35d6e3cdcd40076c5b016d27f0ab17db10246e]
+ 
+You can find the modified source code at the following GitHub repository:
+https://github.com/TechNexion-customization/qtmultimedia/commits/6.5.3
+ 

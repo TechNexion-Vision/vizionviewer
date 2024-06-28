@@ -594,53 +594,6 @@ Module {
         Method { name: "clearSelection" }
         Method { name: "clearCurrentIndex" }
         Method {
-            name: "_q_columnsAboutToBeRemoved"
-            Parameter { type: "QModelIndex" }
-            Parameter { type: "int" }
-            Parameter { type: "int" }
-        }
-        Method {
-            name: "_q_rowsAboutToBeRemoved"
-            Parameter { type: "QModelIndex" }
-            Parameter { type: "int" }
-            Parameter { type: "int" }
-        }
-        Method {
-            name: "_q_columnsAboutToBeInserted"
-            Parameter { type: "QModelIndex" }
-            Parameter { type: "int" }
-            Parameter { type: "int" }
-        }
-        Method {
-            name: "_q_rowsAboutToBeInserted"
-            Parameter { type: "QModelIndex" }
-            Parameter { type: "int" }
-            Parameter { type: "int" }
-        }
-        Method {
-            name: "_q_layoutAboutToBeChanged"
-            Parameter { name: "parents"; type: "QPersistentModelIndex"; isList: true }
-            Parameter { name: "hint"; type: "QAbstractItemModel::LayoutChangeHint" }
-        }
-        Method {
-            name: "_q_layoutAboutToBeChanged"
-            isCloned: true
-            Parameter { name: "parents"; type: "QPersistentModelIndex"; isList: true }
-        }
-        Method { name: "_q_layoutAboutToBeChanged"; isCloned: true }
-        Method {
-            name: "_q_layoutChanged"
-            Parameter { name: "parents"; type: "QPersistentModelIndex"; isList: true }
-            Parameter { name: "hint"; type: "QAbstractItemModel::LayoutChangeHint" }
-        }
-        Method {
-            name: "_q_layoutChanged"
-            isCloned: true
-            Parameter { name: "parents"; type: "QPersistentModelIndex"; isList: true }
-        }
-        Method { name: "_q_layoutChanged"; isCloned: true }
-        Method { name: "_q_modelDestroyed" }
-        Method {
             name: "isSelected"
             type: "bool"
             Parameter { name: "index"; type: "QModelIndex" }
@@ -834,7 +787,7 @@ Module {
             Parameter { name: "to"; type: "int" }
             Parameter { name: "count"; type: "int" }
         }
-        Method { name: "_q_modelReset" }
+        Method { name: "_q_modelAboutToBeReset" }
         Method {
             name: "_q_rowsInserted"
             Parameter { type: "QModelIndex" }

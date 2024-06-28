@@ -22,4 +22,23 @@ Module {
             Parameter { name: "data"; type: "QByteArray" }
         }
     }
+    Component {
+        file: "private/controlstestutils_p.h"
+        name: "QQuickControlsTestUtils::StyleInfo"
+        accessSemantics: "reference"
+        prototype: "QObject"
+        exports: ["Qt.test.controls/StyleInfo 6.0"]
+        isCreatable: false
+        isSingleton: true
+        exportMetaObjectRevisions: [1536]
+        Property {
+            name: "styleName"
+            type: "QString"
+            read: "styleName"
+            index: 0
+            isReadonly: true
+            isFinal: true
+            isConstant: true
+        }
+    }
 }

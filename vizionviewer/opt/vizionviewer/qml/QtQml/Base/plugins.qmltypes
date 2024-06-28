@@ -374,6 +374,10 @@ Module {
                 "TokiPona",
                 "Pijin",
                 "Obolo",
+                "Baluchi",
+                "Ligurian",
+                "Rohingya",
+                "Torwali",
                 "Afan",
                 "Bengali",
                 "Bhutani",
@@ -541,6 +545,7 @@ Module {
                 "VaiScript",
                 "VarangKshitiScript",
                 "YiScript",
+                "HanifiScript",
                 "BengaliScript",
                 "MendeKikakuiScript",
                 "OriyaScript",
@@ -870,6 +875,14 @@ Module {
             ]
         }
         Enum {
+            name: "CurrencySymbolFormat"
+            values: [
+                "CurrencyIsoCode",
+                "CurrencySymbol",
+                "CurrencyDisplayName"
+            ]
+        }
+        Enum {
             name: "DataSizeFormats"
             alias: "DataSizeFormat"
             isFlag: true
@@ -897,6 +910,10 @@ Module {
                 "ISO639",
                 "AnyLanguageCode"
             ]
+        }
+        Enum {
+            name: "QuotationStyle"
+            values: ["StandardQuotation", "AlternateQuotation"]
         }
     }
     Component {

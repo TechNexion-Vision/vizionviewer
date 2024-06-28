@@ -13204,7 +13204,8 @@ Module {
             ]
         }
         Enum {
-            name: "ExclusiveSignal"
+            name: "ExclusiveSignals"
+            alias: "ExclusiveSignal"
             isFlag: true
             values: ["NotExclusive", "SingleTap", "DoubleTap"]
         }

@@ -53,6 +53,7 @@ int VIZIONSDK_API VxOpen(std::shared_ptr<VxCamera> vxcam);
 int VIZIONSDK_API VxClose(std::shared_ptr<VxCamera> vxcam);
 int VIZIONSDK_API VxIsVizionCamera(std::shared_ptr<VxCamera> vxcam);
 int VIZIONSDK_API VxGetDeviceName(std::shared_ptr<VxCamera> vxcam, std::string& deviceName);
+int VIZIONSDK_API VxGetDevicePath(std::shared_ptr<VxCamera> vxcam, std::string& devicePath);
 int VIZIONSDK_API VxGetDeviceInterfaceType(std::shared_ptr<VxCamera> vxcam,
                                            VX_CAMERA_INTERFACE_TYPE& type);
 

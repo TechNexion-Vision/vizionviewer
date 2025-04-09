@@ -83,6 +83,18 @@ struct VxHeaderV3 {  // Header Version 3
 };
 #pragma pack(pop)
 
+enum class VX_CAMERA_PRODUCT_TYPE {
+    VXCAM_PRODUCT_TYPE_NONE_CAMERA,
+    VXCAM_PRODUCT_TYPE_GENERIC_CAMERA,
+
+    /* TechNexion Product */
+    VXCAM_PRODUCT_TYPE_TEVS,
+    VXCAM_PRODUCT_TYPE_TEVI,
+    VXCAM_PRODUCT_TYPE_OV5640,
+
+    CLASS_TYPE_SIZE
+};
+
 enum class VX_CAMERA_INTERFACE_TYPE {
     INTERFACE_USB = 0,
     INTERFACE_MIPI_CSI2,

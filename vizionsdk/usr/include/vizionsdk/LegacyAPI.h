@@ -5,8 +5,6 @@
 #include <stdint.h>
 #include <string>
 #include <vector>
-#include "../includes/internal/VxInternalTypes.hpp"
-#include "../includes/public/VxPublicTypes.hpp"
 
 #if defined(__x86_64__) || defined(_M_X64) || defined(__aarch64__)
 #define x64
@@ -198,8 +196,6 @@ VZ_DEPRECATED int VcRecoverDefaultSetting(VizionCam* vizion_cam);
 VZ_DEPRECATED int VcLoadProfileSettingFromPath(VizionCam* vizion_cam, const char* profile_path);
 VZ_DEPRECATED int VcLoadProfileSetting(VizionCam* vizion_cam, const char* profile_string);
 VZ_DEPRECATED int VcSetProfileControlConfig(VizionCam* vizion_cam);
-VZ_DEPRECATED int VcGetOSPProfile(VizionCam* vizion_cam, VzSensorProfile* profile);
-VZ_DEPRECATED int VcSetOSPProfile(VizionCam* vizion_cam, VzSensorProfile profile);
 VZ_DEPRECATED int VcGotoSaveOSPProfile(VizionCam* vizion_cam, uint8_t check);
 VZ_DEPRECATED int VcGetOSPProfileConfig(VizionCam* vizion_cam, std::string& profile_str);
 VZ_DEPRECATED int VcCheckOSPProfile(VizionCam* vizion_cam);

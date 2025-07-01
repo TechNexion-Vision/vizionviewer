@@ -19,7 +19,7 @@
 #endif
 
 #define VIZIONSDK_VERSION_MAJOR 25
-#define VIZIONSDK_VERSION_MINOR 04
+#define VIZIONSDK_VERSION_MINOR 06
 #define VIZIONSDK_VERSION_PATCH 0
 #define VIZIONSDK_VERSION_BUILD 1
 
@@ -69,6 +69,7 @@ int VIZIONSDK_API VxResetUVC(std::shared_ptr<VxCamera> vxcam);
 int VIZIONSDK_API VxGetUSBFirmwareVersion(std::shared_ptr<VxCamera> vxcam, std::string& fwVer);
 int VIZIONSDK_API VxGetTEVSFirmwareVersion(std::shared_ptr<VxCamera> vxcam, std::string& fwVer);
 int VIZIONSDK_API VxGetSensorUniqueID(std::shared_ptr<VxCamera> vxcam, std::string& uniqueID);
+int VIZIONSDK_API VxGetSensorFirmwareVersion(std::shared_ptr<VxCamera> vxcam, std::string& fwVer);
 
 /* Stream Control */
 int VIZIONSDK_API VxGetFormatList(std::shared_ptr<VxCamera> vxcam, std::vector<VxFormat>& fmtList);
@@ -147,3 +148,7 @@ int VIZIONSDK_API VxResetTimestamp(std::shared_ptr<VxCamera> vxcam);
 /* Frame Count */
 int VIZIONSDK_API VxGetFrameCount(std::shared_ptr<VxCamera> vxcam, uint8_t& frameCount);
 int VIZIONSDK_API VxResetFrameCount(std::shared_ptr<VxCamera> vxcam);
+
+/* Sensor Config */
+int VIZIONSDK_API VxExportSensorConfig(std::shared_ptr<VxCamera> vxcam, std::string cofigPath);
+int VIZIONSDK_API VxDecodeSensorConfig(std::string cofigPath, std::string jsonPath);

@@ -19,6 +19,11 @@ enum class VX_IMAGE_FORMAT {
     UYVY,
     NV12,
     MJPG,
+    BGRA,
+    BGRX,
+    BGR,
+    RGB16,
+    RGB,
 };
 
 enum class VX_CAPTURE_RESULT {
@@ -144,6 +149,10 @@ enum class VX_ISP_IMAGE_PROPERTIES {
     ISP_IMAGE_ZOOM,
     ISP_IMAGE_FLICK_MODE,
     ISP_IMAGE_JPEG_QUALITY,
+    ISP_IMAGE_TRIGGER_MODE,
+    ISP_IMAGE_EHDR_MODE,
+    ISP_EHDR_EXPOSURE_MIN_NUMBER,
+    ISP_EHDR_EXPOSURE_MAX_NUMBER,
     ISP_IMAGE_PROP_MAX
 };
 
@@ -195,6 +204,18 @@ enum class VX_EFFECT_MODE {
     SKETCH_MODE,
 };
 
+enum class VX_TRIGGER_MODE {
+    DISABLE,
+    SYNC,
+    PERIODIC,
+    NON_PERIODIC,
+};
+
+enum class VX_EHDR_MODE {
+    ENABLE,
+    DISABLE,
+};
+
 enum class VX_OSP_PROFILE_FLAG { DISABLED, ENABLED, ENABLED_AND_SAVE };
 
 //* Profile Constants *//
@@ -237,3 +258,7 @@ enum class VX_OSP_PROFILE_FLAG { DISABLED, ENABLED, ENABLED_AND_SAVE };
 #define VZCAM_ISP_PROFILE_NAME_FLIP_MODE                "FlipMode"
 #define VZCAM_ISP_PROFILE_NAME_JPEG_QUAL                "JpegQual"
 #define VZCAM_ISP_PROFILE_NAME_FLICK_MODE               "FlickMode"
+#define VZCAM_ISP_PROFILE_NAME_TRIGGER_MODE             "TriggerMode"
+#define VZCAM_ISP_PROFILE_NAME_EHDR_MODE                "eHDRMode"
+#define VZCAM_ISP_PROFILE_NAME_EHDR_EXPOSURE_MIN_NUMBER "eHDRExposureMinNumber"
+#define VZCAM_ISP_PROFILE_NAME_EHDR_EXPOSURE_MAX_NUMBER "eHDRExposureMaxNumber"

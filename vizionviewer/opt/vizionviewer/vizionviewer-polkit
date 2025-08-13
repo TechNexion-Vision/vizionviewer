@@ -1,3 +1,0 @@
-#!/bin/sh
-
-pkexec "/opt/vizionviewer/vizionviewer.sh" $DISPLAY $XAUTHORITY $XDG_SESSION_TYPE $XDG_RUNTIME_DIR

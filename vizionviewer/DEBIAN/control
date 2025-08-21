@@ -1,11 +1,11 @@
 Package: vizionviewer
-Version: 25.06.1
+Version: 25.08.2
 Priority: optional
 Section: util
 Maintainer: TechNexion <support.vision@technexion.com>
 Homepage: https://www.technexion.com/
-Installed-Size: 80700
-Depends: ca-certificates, libc6, libfontconfig1, tzdata, libxkbcommon0, libpam-runtime, libgudev-1.0-0, gstreamer1.0 | gstreamer1.0-x, gstreamer1.0-plugins-base, vizionsdk(>=25.04.1)
+Installed-Size: 93700
+Depends: ca-certificates, libc6, libfontconfig1, tzdata, libxkbcommon0, libpam-runtime, libgudev-1.0-0, gstreamer1.0 | gstreamer1.0-x, gstreamer1.0-plugins-base, vizionsdk(>=25.06.1) 
 Architecture: arm64
 Provides: vizionviewer
 Conflicts: vizionviewer

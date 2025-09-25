@@ -4,6 +4,15 @@ BASE_DIR=$(dirname "$(readlink -f "$0")")
 
 export LD_LIBRARY_PATH="$BASE_DIR"/lib/:"$BASE_DIR":$LD_LIBRARY_PATH
 
+
+# Set Software Rendering for imx93
+uname_result=$(uname -a)
+
+if echo "$uname_result" | grep -q "imx93"; then                   
+        export FLUTTER_SOFTWARE_RENDERING=1                                 
+fi
+
+
 # Check session type and run appropriate binary
 if [ -n "$WAYLAND_DISPLAY" ]; then
     echo "Wayland session detected via WAYLAND_DISPLAY: $WAYLAND_DISPLAY"

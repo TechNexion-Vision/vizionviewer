@@ -6,4 +6,3 @@ vizionsdk=/usr/lib/libVizionSDK.so
 if [ -f $vizionsdk ]; then
 	rm /usr/lib/libVizionSDK.so*
 fi
-

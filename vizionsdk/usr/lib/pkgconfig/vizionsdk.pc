@@ -5,6 +5,6 @@ includedir=/usr/include
 
 Name: VizionSDK
 Description: Vizion Camera SDK
-Version: 25.8.1
+Version: 25.9.3
 Libs: -L${libdir} -lVizionSDK
 Cflags: -I${includedir}

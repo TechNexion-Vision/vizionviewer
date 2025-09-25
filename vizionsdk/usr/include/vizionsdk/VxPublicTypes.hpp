@@ -218,6 +218,12 @@ enum class VX_EHDR_MODE {
 
 enum class VX_OSP_PROFILE_FLAG { DISABLED, ENABLED, ENABLED_AND_SAVE };
 
+enum class VX_MCU_TYPE {
+    TI,
+    NXP,
+    UNKNOWN,
+};
+
 //* Profile Constants *//
 // UVC Profile Name
 #define VZCAM_UVC_PROFILE_NAME_EXPOSURE_TIME            "ExposureTime"
